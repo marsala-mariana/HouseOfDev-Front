@@ -1,8 +1,8 @@
-import axios from "axios";
 import React, { useContext, useEffect } from "react";
-import { HomeContext } from "../Contexts/HomeContext";
 import home from "../Img/home.jpg";
-import "../Style/Home.css";
+import styled from "styled-components";
+import { HomeContext } from "../Contexts/HomeContext";
+import axios from "axios";
 import Propiedad from "./Propiedad";
 
 const Home = () => {
@@ -16,6 +16,7 @@ const Home = () => {
       .then((propiedad) => setPropiedad(propiedad));
   }, []);
 
+  //filtro precio mayor
   const handleSubmit = () => {
     const ordenado = propiedad.slice().sort(function (a, b) {
       return b.precio - a.precio;
@@ -23,7 +24,7 @@ const Home = () => {
 
     setPropiedad(ordenado);
   };
-
+  //filtro precio menor
   const handleSubmitMenor = () => {
     const ordenado = propiedad.slice().sort(function (a, b) {
       return a.precio - b.precio;
@@ -32,53 +33,101 @@ const Home = () => {
     setPropiedad(ordenado);
   };
   return (
-    <div>
-      <div className="container cd-sm">
-        <div>
-          <img
-            src={home}
-            className="img-fluid d-flex justify-content-center align-items-center"
-            alt="home"
-          ></img>
-        </div>
-        <div class="dropdown">
-          <button
-            class="btn btn-outline-warning dropdown-toggle"
-            type="button"
-            id="dropdownMenu2"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Ordenar por
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <li>
+    <Hom>
+      <div className="d-flex justify-content-center align-items-center">
+        <div className="container cd-sm">
+          <div className="d-flex justify-content-center align-items-center">
+            <img src={home} className="img-fluid " alt="home"></img>
+          </div>
+          {/*filtros*/}
+          <div className="container d-flex justify-content-end">
+            <div className="dropdown">
               <button
-                class="dropdown-item"
+                id="filtro"
+                className="btn btn-secondary dropdown-toggle"
                 type="button"
-                onClick={handleSubmitMenor}
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-                Menor Precio
+                Filtros
               </button>
-            </li>
-            <li>
-              <button
-                class="dropdown-item"
-                type="button"
-                onClick={handleSubmit}
-              >
-                Mayor precio
-              </button>
-            </li>
-          </ul>
-        </div>
+              <ul className="dropdown-menu dropdown-menu-dark">
+                <li>
+                  <a
+                    className="dropdown-item active"
+                    href="#"
+                    onClick={handleSubmit}
+                  >
+                    Mayor precio
+                  </a>
+                </li>
 
-        {propiedad.map((prop) => {
-          return <Propiedad prop={prop} key={prop.id} />;
-        })}
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="#"
+                    onClick={handleSubmitMenor}
+                  >
+                    Menor precio
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="http://localhost:3000/alquiler"
+                  >
+                    Alquiler
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="http://localhost:3000/venta"
+                  >
+                    Venta
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {propiedad.map((prop) => {
+            return <Propiedad prop={prop} key={prop.id} />;
+          })}
+        </div>
       </div>
-    </div>
+    </Hom>
   );
 };
 
 export default Home;
+
+const Hom = styled.div`
+  .img-fluid {
+    width: 82%;
+    margin-top: 29px;
+  }
+  body {
+    background-color: beige;
+  }
+  .btn {
+    margin-right: 12px;
+    border: solid white;
+    background-color: white;
+    color: black;
+  }
+  #filtro {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    width: 250px;
+  }
+  .dropdown-menu {
+    background-color: white;
+    color: black;
+  }
+  .dropdown-item {
+    color: black;
+  }
+  .dropdown-menu-dark {
+    --bs-dropdown-link-active-bg: #fe4236;
+  }
+`;

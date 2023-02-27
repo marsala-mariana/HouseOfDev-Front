@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { PropIdContext } from "../Contexts/PropIdContext";
 import useInput from "../Hooks/useInput";
 import swal from "sweetalert";
+import styled from "styled-components";
 
 const Citas = () => {
   const usuario = JSON.parse(localStorage.getItem("user")) || {};
@@ -29,60 +30,119 @@ const Citas = () => {
       .cath((e) => e);
   };
 
+  console.log(nombre, "N");
+  console.log(email, "E");
+  console.log(telefono, "T");
+  console.log(mensaje, "M");
   return (
-    <div>
-      <main className="form-signin">
-        <h3>"Contactate con House"</h3>
-        <form className="row">
-          <div className="Auto">
-            <label for="floatingInput"> Nombre </label>
-            <input
-              type="text"
-              className="form-control"
-              id="nombre"
-              placeholder={usuario.nombre}
-              {...nombre}
-            />
-          </div>
-          <div className="Auto">
-            <label for="floatingInput"> Email </label>
-            <input
-              type="text"
-              className="form-control"
-              id="email"
-              placeholder={usuario.email}
-              {...email}
-            />
-          </div>
-          <div className="Auto">
-            <label for="floatingInput"> Telefono </label>
-            <input
-              type="text"
-              className="form-control"
-              id="telefono"
-              placeholder={usuario.celular}
-              {...telefono}
-            />
-          </div>
-          <div className="Auto">
-            <label for="exampleFormControlTextarea1" class="form-label">
-              Mensaje
-            </label>
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-              {...mensaje}
-            ></textarea>
-          </div>
+    <StyleCitas>
+      <div className="container d-flex justify-content-center d-flex align-items-center">
+        <main className="form-signin">
+          <form className="row">
+            <div className="mb-3 d-flex justify-content-center">
+              <h1>"Contactate con House"</h1>
+            </div>
 
-          <button className="btn btn-warning" onClick={handleSubmit}>
-            Contactar
-          </button>
-        </form>
-      </main>
-    </div>
+            <div className="Auto mb-3 d-flex justify-content-center">
+              <label for="floatingInput"> Nombre </label>
+
+              <input
+                type="text"
+                className="form-control"
+                id="nombre"
+                placeholder={usuario.nombre}
+                {...nombre}
+              />
+            </div>
+
+            <div className="Auto mb-3 d-flex justify-content-center">
+              <label for="floatingInput"> Email </label>
+              <input
+                type="text"
+                className="form-control"
+                id="email"
+                placeholder={usuario.email}
+                {...email}
+              />
+            </div>
+            <div className="Auto Auto mb-3 d-flex justify-content-center">
+              <label for="floatingInput"> Telefono </label>
+              <input
+                type="text"
+                className="form-control"
+                id="telefono"
+                placeholder={usuario.celular}
+                {...telefono}
+              />
+            </div>
+            <div className="Auto Auto mb-3 d-flex justify-content-center">
+              <label for="exampleFormControlTextarea1" class="form-label">
+                Mensaje
+              </label>
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                {...mensaje}
+              ></textarea>
+            </div>
+
+            <div className="d-flex justify-content-center">
+              <button className="btn btn-warning" onClick={handleSubmit}>
+                Contactar
+              </button>
+            </div>
+          </form>
+        </main>
+      </div>
+    </StyleCitas>
   );
 };
 
 export default Citas;
+
+const StyleCitas = styled.div`
+  h1 {
+    color: #123ac8;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: medium;
+
+    padding-left: 8px;
+    padding-top: 9px;
+    height: 42px;
+    width: 110px;
+    margin-left: 13px;
+    margin-top: 14px;
+  }
+
+  .label {
+    color: #123ac8;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    padding-top: 16px;
+  }
+  .form-control {
+    width: 345px;
+    margin-left: 14px;
+  }
+  .container {
+    margin-top: 63px;
+
+    box-shadow: 10px 10px 17px 10px rgba(3, 2, 2, 0.3);
+    -webkit-box-shadow: 10px 10px 17px 10px rgba(3, 2, 2, 0.3);
+    -moz-box-shadow: 10px 10px 17px 10px rgba(3, 2, 2, 0.3);
+  }
+  .btn {
+    width: 225px;
+    height: 54px;
+    padding-top: 13px;
+  }
+  .row {
+    margin-bottom: 123px;
+  }
+  .Auto {
+    padding-bottom: 21px;
+    height: 73px;
+  }
+`;

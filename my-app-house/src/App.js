@@ -12,6 +12,8 @@ import AdminEditarProp from "./Component/AdminEditarProp";
 import Citas from "./Component/Citas";
 import AdminCitas from "./Component/AdminCitas";
 import BusquedaEncontrada from "./Component/BusquedaEncontrada";
+import Alquiler from "./Component/Alquiler";
+import Venta from "./Component/Venta";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
         <Route path="/citas" element={<Citas />} />
         <Route path="/admincitas" element={<AdminCitas />} />
         <Route path="/encontrado" element={<BusquedaEncontrada />} />
+        <Route path="/alquiler" element={<Alquiler />} />
+        <Route path="/venta" element={<Venta />} />
       </Routes>
     </>
   );

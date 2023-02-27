@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import useInput from "../Hooks/useInput";
 import swal from "sweetalert";
+import styled from "styled-components";
 
 const AgregarPropiedad = () => {
   const ubicacion = useInput();
@@ -43,19 +44,22 @@ const AgregarPropiedad = () => {
   };
 
   return (
-    <div>
-      <h4>AGREGAR UNA PROPIEDAD:</h4>
-      <form>
-        <div class="row">
-          <div class="col-4">
+    <PropA>
+      <div className="container d-flex justify-content-center d-flex align-items-center">
+        <form className="row">
+          <div className="mb-3 ">
+            <h1>Agregar Propiedad</h1>
+          </div>
+
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               placeholder="ubicacion"
               {...ubicacion}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -63,7 +67,7 @@ const AgregarPropiedad = () => {
               {...estado}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -71,7 +75,7 @@ const AgregarPropiedad = () => {
               {...nombre}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -79,7 +83,7 @@ const AgregarPropiedad = () => {
               {...barrio}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -87,7 +91,7 @@ const AgregarPropiedad = () => {
               {...pais}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -95,7 +99,7 @@ const AgregarPropiedad = () => {
               {...disponibilidad}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -103,7 +107,7 @@ const AgregarPropiedad = () => {
               {...precio}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -111,7 +115,7 @@ const AgregarPropiedad = () => {
               {...descripcion}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -119,7 +123,7 @@ const AgregarPropiedad = () => {
               {...categoria}
             />
           </div>
-          <div class="col-4">
+          <div class="Auto mb-3 d-flex justify-content-center">
             <input
               type="text"
               class="form-control"
@@ -127,13 +131,32 @@ const AgregarPropiedad = () => {
               {...imagen}
             />
           </div>
-        </div>
-        <button className="btn btn-outline-warning" onClick={handleSubmit}>
-          Agregar
-        </button>
-      </form>
-    </div>
+          <div className="d-flex justify-content-center">
+            <button
+              className="btn btn-primary d-flex justify-content-center"
+              onClick={handleSubmit}
+            >
+              Agregar
+            </button>
+          </div>
+        </form>
+      </div>
+    </PropA>
   );
 };
 
 export default AgregarPropiedad;
+
+const PropA = styled.div`
+  h1 {
+    color: #123ac8;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: medium;
+    padding-left: 8px;
+    padding-top: 9px;
+    height: 42px;
+    margin-left: 13px;
+    margin-top: 14px;
+  }
+`;

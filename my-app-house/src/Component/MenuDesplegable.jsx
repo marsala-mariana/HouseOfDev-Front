@@ -28,9 +28,9 @@ const MenuDesplegable = () => {
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          {usuario.nombre.toUpperCase()}
+          {`🖐 HOLA ${usuario.nombre.toUpperCase()}`}
         </a>
-        <ul class="dropdown-menu">
+        <ul className="dropdown-menu">
           <a className="dropdown-item" href="http://localhost:3000/favoritos">
             Mis Favoritos
           </a>
