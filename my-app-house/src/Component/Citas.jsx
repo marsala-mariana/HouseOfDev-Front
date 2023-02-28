@@ -30,7 +30,6 @@ const Citas = () => {
       .cath((e) => console.log(e, "Error propiedad no agregada"));
   };
 
-  console.log(detalle, "de");
   return (
     <StyleCitas>
       <div className="container d-flex justify-content-center d-flex align-items-center">

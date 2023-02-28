@@ -56,6 +56,7 @@ const Navbar = () => {
                   <>
                     <li className="nav-item active">
                       <a
+                        id="linck"
                         className="nav-link"
                         aria-current="page"
                         href="http://localhost:3000/registro"
@@ -65,6 +66,7 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item active">
                       <a
+                        id="linck"
                         className="nav-link"
                         href="http://localhost:3000/login"
                       >
@@ -103,9 +105,9 @@ const Contenedor = styled.nav`
 
     background-color: #fe4236;
   }
-  .nav-link {
+  #linck {
     font-weight: bold;
-    padding-left: 28px;
+    padding-left: 51px;
   }
 
   .dropdown-menu {
