@@ -27,14 +27,16 @@ const Admin = () => {
       })
 
       .then(() => swal("Usuario eliminado!"))
+
       .then(() => {
         window.location.reload(false);
       });
   };
+
   return (
-    <>
-      {usuario.admin ? (
-        <AdminSti>
+    <AdminSti>
+      <>
+        {usuario.admin ? (
           <div className="container  d-flex justify-content-center d-flex align-items-center">
             <div className="row ">
               <div className="mb-3 d-flex justify-content-center">
@@ -49,28 +51,22 @@ const Admin = () => {
                 <ul className="list-group list-group-flush">
                   {user.map((usuarios) => {
                     return (
-                      <div className="card ">
-                        <div className="col-md-6 ">
-                          <h5 className="card-title ">
-                            Nombre: {usuarios.nombre}
-                          </h5>
-                          <h5 className="card-title">
-                            Celular: {usuarios.celular}
-                          </h5>
-                          <h5 className="card-title">
-                            Email: {usuarios.email}
-                          </h5>
-                          <h5 className="card-title">
-                            Creacion: {usuarios.updatedAt}
-                          </h5>
-                          <button
-                            className="btn btn-secondary"
-                            onClick={() => handleSubmit(usuarios.id)}
-                          >
-                            🗑 Eliminar
-                          </button>
-                        </div>
-                      </div>
+                      <li key={usuarios.id} className="list-group-item">
+                        {usuarios.nombre}
+                        <br />
+                        {usuarios.celular}
+                        <br />
+                        {usuarios.email}
+                        <br />
+                        {usuarios.updatedAt}
+                        <br />
+                        <button
+                          className="btn btn-outline-warning"
+                          onClick={() => handleSubmit(usuarios.id)}
+                        >
+                          🗑 Eliminar
+                        </button>
+                      </li>
                     );
                   })}
                 </ul>
@@ -84,11 +80,11 @@ const Admin = () => {
               </div>
             </div>
           </div>
-        </AdminSti>
-      ) : (
-        <h1>NO SOS ADMIN</h1>
-      )}
-    </>
+        ) : (
+          <h1>NO SOS ADMIN</h1>
+        )}
+      </>
+    </AdminSti>
   );
 };
 

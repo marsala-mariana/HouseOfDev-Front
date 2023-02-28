@@ -47,7 +47,7 @@ const MiPerfil = () => {
             </div>
 
             <div className="Auto mb-3 d-flex justify-content-center">
-              <label for="floatingInput" class="label">
+              <label htmlFor="floatingInput" class="label">
                 Nombre
               </label>
 
@@ -61,7 +61,7 @@ const MiPerfil = () => {
             </div>
 
             <div className="Auto mb-3 d-flex justify-content-center">
-              <label for="floatingInput" class="label">
+              <label htmlFor="floatingInput" class="label">
                 Celular
               </label>
 
@@ -74,7 +74,7 @@ const MiPerfil = () => {
               />
             </div>
             <div className="Auto mb-3 d-flex justify-content-center" id="inpu">
-              <label for="floatingInput" class="label">
+              <label htmlFor="floatingInput" class="label">
                 Email
               </label>
 

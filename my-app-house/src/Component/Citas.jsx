@@ -17,7 +17,7 @@ const Citas = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(`http://localhost:3001/api/cita/agrega/${usuario.id}`, {
+      .post(`http://localhost:3001/api/cita/agregarcita/${usuario.id}`, {
         idUsuario: usuario.id,
         idPropiedades: detalle.id,
         nombre: nombre.value,
@@ -27,13 +27,10 @@ const Citas = () => {
         imagen: detalle.imagen,
       })
       .then(() => swal("Enviado", "En breve nos contactaremos ", "success"))
-      .cath((e) => e);
+      .cath((e) => console.log(e, "Error propiedad no agregada"));
   };
 
-  console.log(nombre, "N");
-  console.log(email, "E");
-  console.log(telefono, "T");
-  console.log(mensaje, "M");
+  console.log(detalle, "de");
   return (
     <StyleCitas>
       <div className="container d-flex justify-content-center d-flex align-items-center">
@@ -88,7 +85,7 @@ const Citas = () => {
             </div>
 
             <div className="d-flex justify-content-center">
-              <button className="btn btn-warning" onClick={handleSubmit}>
+              <button className="btn " onClick={handleSubmit}>
                 Contactar
               </button>
             </div>
@@ -106,12 +103,12 @@ const StyleCitas = styled.div`
     color: #123ac8;
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: medium;
+    font-size: 30px;
 
     padding-left: 8px;
     padding-top: 9px;
     height: 42px;
-    width: 110px;
+
     margin-left: 13px;
     margin-top: 14px;
   }
@@ -136,7 +133,9 @@ const StyleCitas = styled.div`
   .btn {
     width: 225px;
     height: 54px;
-    padding-top: 13px;
+
+    --bs-btn-color: #f8f9fa;
+    --bs-btn-bg: #fe4236;
   }
   .row {
     margin-bottom: 123px;

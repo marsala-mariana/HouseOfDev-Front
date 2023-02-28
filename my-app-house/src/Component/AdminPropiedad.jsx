@@ -31,10 +31,10 @@ const AdminPropiedad = () => {
       <div className="conte">
         <h1>Editar/Eliminar Propiedad</h1>
 
-        <ul class="list-group list-group-flush">
+        <ul className="list-group list-group-flush">
           {pedido.map((e) => {
             return (
-              <div className="card">
+              <div className="card" key={e.id}>
                 <div className="row">
                   <div className="col-md-6">
                     <img
@@ -44,7 +44,7 @@ const AdminPropiedad = () => {
                     />
                   </div>
 
-                  <div className="col-md-6">
+                  <div className="col-md-6" key={e.id}>
                     <h5 className="card-title">{e.nombre}</h5>
                     <h5 className="card-title">{e.estado}</h5>
                     <h5 className="card-title">{e.pais}</h5>
