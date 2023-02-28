@@ -78,12 +78,12 @@ const Lista = styled.div`
     color: #123ac8;
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: medium;
-    padding-left: 8px;
+    font-size: 23px;
     padding-top: 9px;
     height: 42px;
     margin-left: 13px;
     margin-top: 14px;
+    margin-bottom: 35px;
   }
   .btn-secondary {
     margin-right: 15px;

@@ -133,7 +133,7 @@ const AgregarPropiedad = () => {
           </div>
           <div className="d-flex justify-content-center">
             <button
-              className="btn btn-primary d-flex justify-content-center"
+              className="btn btn-secondary d-flex justify-content-center"
               onClick={handleSubmit}
             >
               Agregar
@@ -152,8 +152,7 @@ const PropA = styled.div`
     color: #123ac8;
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: medium;
-    padding-left: 8px;
+    font-size: 23px;
     padding-top: 9px;
     height: 42px;
     margin-left: 13px;

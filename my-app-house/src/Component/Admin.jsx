@@ -61,7 +61,7 @@ const Admin = () => {
                         {usuarios.updatedAt}
                         <br />
                         <button
-                          className="btn btn-outline-warning"
+                          className="btn btn-secondary"
                           onClick={() => handleSubmit(usuarios.id)}
                         >
                           🗑 Eliminar
@@ -95,12 +95,9 @@ const AdminSti = styled.div`
     color: #123ac8;
     font-family: "Times New Roman", Times, serif;
     font-weight: bold;
-    font-size: medium;
-
-    padding-left: 8px;
+    font-size: 23px;
     padding-top: 26px;
     height: 42px;
-
     margin-left: 13px;
     margin-top: 14px;
   }
@@ -111,7 +108,6 @@ const AdminSti = styled.div`
   }
   .btn-secondary {
     color: white;
-
     --bs-btn-bg: #dc3545;
   }
   .card {
