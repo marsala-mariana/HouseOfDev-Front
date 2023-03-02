@@ -26,8 +26,7 @@ const Citas = () => {
         mensaje: mensaje.value,
         imagen: detalle.imagen,
       })
-      .then(() => swal("Enviado", "En breve nos contactaremos ", "success"))
-      .cath((e) => console.log(e, "Error propiedad no agregada"));
+      .then(() => swal("Enviado", "En breve nos contactaremos ", "success"));
   };
 
   return (
